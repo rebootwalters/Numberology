@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numberology", "Numberology\Numberology.csproj", "{0036911A-C648-4AA3-836C-3DB7AC102AD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{2D0AD739-40C3-4F2C-8E41-40AFE5DD0C25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0036911A-C648-4AA3-836C-3DB7AC102AD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0036911A-C648-4AA3-836C-3DB7AC102AD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0036911A-C648-4AA3-836C-3DB7AC102AD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0036911A-C648-4AA3-836C-3DB7AC102AD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D0AD739-40C3-4F2C-8E41-40AFE5DD0C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D0AD739-40C3-4F2C-8E41-40AFE5DD0C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D0AD739-40C3-4F2C-8E41-40AFE5DD0C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D0AD739-40C3-4F2C-8E41-40AFE5DD0C25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A54FE66-ED4A-4D01-B95C-A07B70756D4D}
+	EndGlobalSection
+EndGlobal
