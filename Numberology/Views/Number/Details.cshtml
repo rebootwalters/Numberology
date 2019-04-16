@@ -1,0 +1,42 @@
+﻿@model BusinessLogicLayer.NumberBLL
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NumberBLL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doublestuff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doublestuff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Floatstuff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Floatstuff)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

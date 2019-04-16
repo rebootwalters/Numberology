@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numberology", "Numberology\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{2D0AD739-40C3-4F2C-8E41-40AFE5DD0C25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayerTesting", "DataLayerTesting\DataLayerTesting.csproj", "{CBCC3607-6E32-4287-B65F-E1F5659A8875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{B9EA527D-44F9-4B3D-87B2-F9F0D9A73DE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{2D0AD739-40C3-4F2C-8E41-40AFE5DD0C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D0AD739-40C3-4F2C-8E41-40AFE5DD0C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D0AD739-40C3-4F2C-8E41-40AFE5DD0C25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBCC3607-6E32-4287-B65F-E1F5659A8875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBCC3607-6E32-4287-B65F-E1F5659A8875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBCC3607-6E32-4287-B65F-E1F5659A8875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBCC3607-6E32-4287-B65F-E1F5659A8875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9EA527D-44F9-4B3D-87B2-F9F0D9A73DE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9EA527D-44F9-4B3D-87B2-F9F0D9A73DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9EA527D-44F9-4B3D-87B2-F9F0D9A73DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9EA527D-44F9-4B3D-87B2-F9F0D9A73DE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

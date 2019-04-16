@@ -8,10 +8,7 @@ namespace Numberology.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Brian()
-        {
-            return View();
-        }
+        
 
         public ActionResult Index()
         {
@@ -20,16 +17,27 @@ namespace Numberology.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Interesting Facts";
 
             return View();
+        }
+
+        public ActionResult Signin()
+        {
+            return View();
+        }
+        public ActionResult Signout()
+        {
+            Session.Remove("AUTHUsername");
+            Session.Remove("AUTHRoles"); 
+            return Redirect(@"\Home\");
         }
     }
 }

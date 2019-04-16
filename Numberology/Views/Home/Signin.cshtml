@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Unauthorized";
+    var roles = ViewData["Roles"] as string;
+    var URL = ViewData["ReturnURL"] as string;
+    var UserName = User.Identity.Name;
+    var method = Context.Request.HttpMethod;
+    var message = Model as string;
+}
+
+<h2>Unauthorized</h2>
+<h3>@message</h3>
+Method = @method <p></p>
+
+
+    <form action="\Shared\Unauthorized" method="post">
+        <fieldset>
+            <div class="editor-label">
+                @Html.Label("EMail Address")
+
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("EMail")
+            </div>
+            <div class="editor-label">
+                @Html.Label("Password")
+
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("Password")
+            </div>
+
+           
+            <div class="editor-field">
+                @Html.Hidden("ReturnURL", @"~\Home", new { @readonly = "readonly" });
+            </div>
+
+            <input type="submit" value="Login" />
+        </fieldset>
+
+    </form>
+
+
+
+
+
+
+
+
+
+

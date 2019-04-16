@@ -126,10 +126,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HashController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NumberController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\RelatedNumberController.cs" />
+    <Compile Include="Controllers\RiddleController.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuthorizeFilter.cs" />
+    <Compile Include="Models\UserRolesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -169,10 +178,38 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Brian.cshtml" />
+    <Content Include="Views\Number\index.cshtml" />
+    <Content Include="Views\Number\Edit.cshtml" />
+    <Content Include="Views\Number\Create.cshtml" />
+    <Content Include="Views\Number\Details.cshtml" />
+    <Content Include="Views\Number\Delete.cshtml" />
+    <Content Include="Views\Shared\exception.cshtml" />
+    <Content Include="Views\Number\ViewRelated.cshtml" />
+    <Content Include="Views\RelatedNumber\Index.cshtml" />
+    <Content Include="Views\RelatedNumber\Create.cshtml" />
+    <Content Include="Views\RelatedNumber\Delete.cshtml" />
+    <Content Include="Views\RelatedNumber\Details.cshtml" />
+    <Content Include="Views\RelatedNumber\Edit.cshtml" />
+    <Content Include="Views\Hash\Details.cshtml" />
+    <Content Include="Views\Riddle\Index.cshtml" />
+    <Content Include="Views\Riddle\Edit.cshtml" />
+    <Content Include="Views\Riddle\Create.cshtml" />
+    <Content Include="Views\Riddle\Details.cshtml" />
+    <Content Include="Views\Riddle\Delete.cshtml" />
+    <Content Include="Views\Riddle\Answer.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\Create.cshtml" />
+    <Content Include="Views\Account\Details.cshtml" />
+    <Content Include="Views\Account\Delete.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
+    <Content Include="Views\Register\Create.cshtml" />
+    <Content Include="Views\Register\Created.cshtml" />
+    <Content Include="Views\Register\Verified.cshtml" />
+    <Content Include="Views\Shared\Unauthorized.cshtml" />
+    <Content Include="Views\Home\Signin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -186,6 +223,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{b9ea527d-44f9-4b3d-87b2-f9f0d9a73de1}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

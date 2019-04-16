@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Unauthorized";
+    var roles = ViewData["Roles"] as string;
+    var URL = ViewData["ReturnURL"] as string;
+    var UserName = User.Identity.Name;
+    var method = Context.Request.HttpMethod;
+    var message = Model as string;
+}
+
+<h2>Unauthorized</h2>
+<h3>@message</h3>
+Method = @method <p></p>
+You are not allowed access to this resource using Your current credentials:
+<p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <text>
+        <p>you are Authenticated as @User.Identity.Name </p>
+        <p>using the Authentication Method of @User.Identity.AuthenticationType</p>
+        <p>The Roles Required are any of : @roles</p>
+        <p>The Refering URL is @URL</p>
+        </text>
+    }
+    else
+    {
+        <text>
+
+            you are not authenticated as anyone using the Authentication Method of
+            @User.Identity.AuthenticationType
+            <p>The Refering URL is @URL</p>
+        </text>
+    }
+    </p>
+
+     Please Login, or <a href="Register">Register</a> an account as a new User
+
+    <form action="\Shared\Unauthorized" method="post">
+        <fieldset>
+            <div class="editor-label">
+                @Html.Label("EMail Address")
+
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("EMail")
+            </div>
+            <div class="editor-label">
+                @Html.Label("Password")
+
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("Password")
+            </div>
+
+            <div class="editor-label">
+                @Html.Label("ReturnURL")
+
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("ReturnURL",URL, new { @readonly = "readonly" });
+            </div>
+
+            <input type="submit" value="Login" />
+        </fieldset>
+
+    </form>
+
+
+
+
+
+
+
+
+
+

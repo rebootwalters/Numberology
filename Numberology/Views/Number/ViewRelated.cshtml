@@ -1,0 +1,86 @@
+﻿@model BusinessLogicLayer.NumberBLL
+
+@{
+    ViewBag.Title = "ViewRelated";
+}
+
+<h2>ViewRelated</h2>
+
+<div>
+    <h4>NumberBLL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doublestuff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doublestuff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Floatstuff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Floatstuff)
+        </dd>
+
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            "ParentNumberID"
+        </th>
+        <th>
+           "RelatedName"
+        </th>
+        <th>
+           "RelatedLanguage"
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.RelatedNumbers)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentNumberID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RelatedName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RelatedLanguage)
+            </td>
+            <td>
+      @Html.ActionLink("Edit", "Edit", new { Controller = "RelatedNumber",
+                            id = item.ID , ParentID = item.ParentNumberID}) |
+      @Html.ActionLink("Details", "Details", new { Controller = "RelatedNumber",
+                            id = item.ID,ParentID = item.ParentNumberID }) |
+      @Html.ActionLink("Delete", "Delete", new { Controller = "RelatedNumber",
+                            id = item.ID, ParentID = item.ParentNumberID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

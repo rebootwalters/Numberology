@@ -1,0 +1,72 @@
+﻿@model BusinessLogicLayer.RelatedNumberBLL
+
+@{
+    ViewBag.Title = "Edit";
+    string ParentIDString = Context.Request.QueryString["ParentID"];
+    string action = "Index";
+    string returnTo = "-1";
+
+    string text = "Back to List of all Related Numbers";
+    object other = new { };
+    if ( string.IsNullOrEmpty(ParentIDString))
+    {
+
+    }
+    else
+    {
+        action = "ViewRelated";
+        other = new { Controller = "Number", id = ParentIDString };
+        text = "Back to List of Related Numbers";
+        returnTo = ParentIDString.ToString();
+    }
+
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>RelatedNumberBLL</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+        @Html.Hidden("ReturnTo",returnTo)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ParentNumberID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ParentNumberID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ParentNumberID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RelatedName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RelatedName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RelatedName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RelatedLanguage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RelatedLanguage, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RelatedLanguage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink(text, action,other)
+</div>

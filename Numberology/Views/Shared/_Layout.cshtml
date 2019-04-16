@@ -8,7 +8,6 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    BRIAN STUFF
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -22,10 +21,26 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Brian", "Brian", "Home")</li>
+
+                    <li>@Html.ActionLink("Numbers", "Index", "Number")</li>
+                    <li>@Html.ActionLink("Languages", "Index", "RelatedNumber")</li>
+                    <li>@Html.ActionLink("Riddless", "Index", "Riddle")</li>
+                    <li>@Html.ActionLink("Account", "Index", "Account")</li>
+                    
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                     <li>@Html.ActionLink("Sign out","signout", "Home")</li>
+                     <li>@Html.ActionLink(User.Identity.Name, "Show", "Account")</li>
+                        
+                    }
+                    else
+                    {
+                    <li>@Html.ActionLink("Register", "Index", "Register")</li>
+                    <li>@Html.ActionLink("Sign In", "signin", "Home")</li>
+                    }
                 </ul>
             </div>
         </div>

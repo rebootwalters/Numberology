@@ -1,0 +1,60 @@
+﻿@model BusinessLogicLayer.RelatedNumberBLL
+
+@{
+    ViewBag.Title = "Details";
+    string ParentIDString = Context.Request.QueryString["ParentID"];
+    string action = "Index";
+    string returnTo = "-1";
+
+    string text = "Back to List of all Related Numbers";
+    object other = new { };
+    if (string.IsNullOrEmpty(ParentIDString))
+    {
+
+    }
+    else
+    {
+        action = "ViewRelated";
+        other = new { Controller = "Number", id = ParentIDString };
+        text = "Back to List of Related Numbers";
+        returnTo = ParentIDString.ToString();
+    }
+
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RelatedNumberBLL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentNumberID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentNumberID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelatedName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RelatedName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelatedLanguage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RelatedLanguage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID , ParentID=returnTo}) |
+    @Html.ActionLink(text, action, other)
+</p>

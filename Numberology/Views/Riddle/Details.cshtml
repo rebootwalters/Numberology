@@ -1,0 +1,42 @@
+﻿@model BusinessLogicLayer.RiddleBLL
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RiddleBLL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RiddleID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RiddleID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Riddle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Riddle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Answer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Answer)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1>Details</h1>
+
+<h2>@ViewBag.Title</h2>
+
+<h3>@ViewBag.Message</h3>
+
+<h4>salted password: @ViewBag.salted</h4>
+
+Session
+<table>
+    <tbody>
+        @foreach (var item in HttpContext.Current.Session.Keys)
+        {
+           <tr>
+               <td> @item.ToString() </td> 
+           <td>@HttpContext.Current.Session[item.ToString()].ToString()</td>
+        </tr>
+        }
+    </tbody>
+    </table>
+
+

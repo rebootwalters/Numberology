@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Created";
+}
+
+<h2>Created</h2>
+
+This page simulates the E-Mail you should get from us.  You would click on the following link in the E-Mail to verify your account.
+
+@Html.ActionLink("Verify YOur E-Mail","Verify",new {Controller="Register",ID=ViewBag.ID,Hash= ViewBag.Hash })
+

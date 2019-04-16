@@ -1,0 +1,66 @@
+﻿@model BusinessLogicLayer.RelatedNumberBLL
+
+@{
+    ViewBag.Title = "Delete";
+    string ParentIDString = Context.Request.QueryString["ParentID"];
+    string action = "Index";
+    string returnTo = "-1";
+
+    string text = "Back to List of all Related Numbers";
+    object other = new { };
+    if (string.IsNullOrEmpty(ParentIDString))
+    {
+
+    }
+    else
+    {
+        action = "ViewRelated";
+        other = new { Controller = "Number", id = ParentIDString };
+        text = "Back to List of Related Numbers";
+        returnTo = ParentIDString.ToString();
+    }
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>RelatedNumberBLL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentNumberID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentNumberID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelatedName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RelatedName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RelatedLanguage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RelatedLanguage)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+
+                @Html.ActionLink(text, action,other)
+    </div>
+    }
+</div>
