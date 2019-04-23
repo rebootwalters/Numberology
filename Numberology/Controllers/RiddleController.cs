@@ -7,7 +7,7 @@ using BusinessLogicLayer;
 
 namespace Numberology.Controllers
 {
-    public class RiddleController : Controller
+  [MustBeInRole(Roles ="Administrator")]  public class RiddleController : Controller
     {
         // GET: Riddle
         public ActionResult Index()

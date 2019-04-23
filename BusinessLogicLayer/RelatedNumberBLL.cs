@@ -30,7 +30,7 @@ namespace BusinessLogicLayer
             _parentNumber = Parent;
             ID = relatedNumberDAL.ID;
             RelatedName = relatedNumberDAL.RelatedName;
-            RelatedLanguage = relatedNumberDAL.RelatedName;
+            RelatedLanguage = relatedNumberDAL.RelatedLanguage;
             ParentNumberID = relatedNumberDAL.ParentNumberID;
 
         }

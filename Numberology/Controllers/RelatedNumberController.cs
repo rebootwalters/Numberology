@@ -7,7 +7,7 @@ using BusinessLogicLayer;
 
 namespace Numberology.Controllers
 {
-    public class RelatedNumberController : Controller
+  [MustBeInRole(Roles = "Contributer Administrator")]  public class RelatedNumberController : Controller
     {
         // GET: RelatedNumber
         public ActionResult Index()

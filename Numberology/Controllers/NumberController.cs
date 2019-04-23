@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Numberology.Controllers
 {
-    public class NumberController : Controller
+   [MustBeInRole(Roles = "User Contributer Administrator")] public class NumberController : Controller
     {
 
         public ActionResult ViewRelated(int id)

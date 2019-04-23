@@ -6,29 +6,57 @@ using System.Web.Mvc;
 
 namespace Numberology
 {
-    public class MyAuthorizeAttribute : AuthorizeAttribute
+    public class MustBeInRoleAttribute : AuthorizeAttribute
     {
-        protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
+        public override void OnAuthorization(AuthorizationContext filterContext)
         {
-           // check if user is indeed in the role.  
+            // check if user is indeed in the role.  
             if (this.Roles.Split(' ').Any(filterContext.HttpContext.User.IsInRole))
             {
                 //Call base class to allow user into the action method
-                base.HandleUnauthorizedRequest(filterContext);
+                base.OnAuthorization(filterContext); ;
             }
             else
             {
                 // user is not in the required role.  Redirect to a login page
-                var vr = new ViewResult();
-                vr.ViewName = "~/views/Shared/Unauthorized.cshtml";
-                vr.ViewData["Roles"] = Roles;
-                vr.ViewData["ReturnURL"] = filterContext.RequestContext.HttpContext.Request.Path.ToString();
+                string ReturnURL = filterContext.RequestContext.HttpContext.Request.Path.ToString();
+
+                filterContext.Controller.TempData.Add("Message",
+        $"you must be in at least one of the following roles to access this resource:  {this.Roles}");
+                filterContext.Controller.TempData.Add("ReturnURL", ReturnURL);
+                System.Web.Routing.RouteValueDictionary dict = new System.Web.Routing.RouteValueDictionary();
+                dict.Add("Controller", "Home");
+                dict.Add("Action", "Login");
+                filterContext.Result = new RedirectToRouteResult(dict);
 
 
+            }
+        }
+    }
 
+    public class MustBeLoggedInAttribute : AuthorizeAttribute
+    {
+        public override void OnAuthorization(AuthorizationContext filterContext)
+        {
+            // check if user is indeed in the role.  
+            if (filterContext.HttpContext.User.Identity.IsAuthenticated)
+            {
+                //Call base class to allow user into the action method
+                base.OnAuthorization(filterContext);
+            }
+            else
+            {
+                // user is not Logged in.  Redirect to a login page
+                string ReturnURL = filterContext.RequestContext.HttpContext.Request.Path.ToString();
 
+                filterContext.Controller.TempData.Add("Message",
+        $"you must be logged into some account to access this resource.  You are not logged in");
+                filterContext.Controller.TempData.Add("ReturnURL", ReturnURL);
+                System.Web.Routing.RouteValueDictionary dict = new System.Web.Routing.RouteValueDictionary();
+                dict.Add("Controller", "Home");
+                dict.Add("Action", "Login");
+                filterContext.Result = new RedirectToRouteResult(dict);
 
-                filterContext.Result = vr;
 
             }
         }

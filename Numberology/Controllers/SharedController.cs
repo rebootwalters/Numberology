@@ -8,6 +8,16 @@ namespace Numberology.Controllers
 {
     public class SharedController : Controller
     {
+
+        public ActionResult Test(int id)
+        {
+            if (id<0)
+            {
+                return View("LoginError",(object)"this is a test negative");
+            }
+            return View("LoginError", (object)"this is a test non negative");
+        }
+
         [HttpGet]
         public ActionResult Unauthorized()
         {
@@ -31,7 +41,7 @@ namespace Numberology.Controllers
                 }
 
                 return View(View((object)"Not a Valid Login"));
-
+                
            
             }
         }

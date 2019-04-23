@@ -1,4 +1,26 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    string admincolor = "color:red";
+    string powerusercolor = "color:red";
+    string usercolor = "color:red";
+    string loggedincolor = "color:red";
+    if (User.Identity.IsAuthenticated )
+    {
+        loggedincolor = "color:green";
+    }
+    if (User.IsInRole("User"))
+    {
+        usercolor = "color:green";
+    }
+    if (User.IsInRole("Contributer"))
+    {
+        powerusercolor = "color:green";
+    }
+    if (User.IsInRole("Administrator"))
+    {
+        admincolor = "color:green";
+    }
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -17,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Numberology", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Numberology", "Index", "Home", new { area = "" }, new { })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -25,10 +47,11 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
 
-                    <li>@Html.ActionLink("Numbers", "Index", "Number")</li>
-                    <li>@Html.ActionLink("Languages", "Index", "RelatedNumber")</li>
-                    <li>@Html.ActionLink("Riddless", "Index", "Riddle")</li>
-                    <li>@Html.ActionLink("Account", "Index", "Account")</li>
+               <li>@Html.ActionLink("Numbers[user]", "Index", new {Controller = "Number" },new {style = usercolor })</li>
+                    <li>@Html.ActionLink("Languages[power]", "Index",
+                       new { Controller = "RelatedNumber" }, new {style = powerusercolor })</li>
+                    <li>@Html.ActionLink("Riddles[Administrator]", "Index", new { Controller = "Riddle" },new {style = admincolor })</li>
+                    <li>@Html.ActionLink("Account[loggedin]", "Index", new { Controller = "Account" },new {style = loggedincolor })</li>
                     
                     @if (User.Identity.IsAuthenticated)
                     {

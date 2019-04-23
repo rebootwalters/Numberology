@@ -8,7 +8,7 @@ using BusinessLogicLayer;
 namespace Numberology.Controllers
 {
    
-   [MyAuthorize(Roles ="Administrator Guest")]
+   [MustBeLoggedIn]
     public class AccountController : Controller
     {
         // GET: Account

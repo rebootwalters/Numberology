@@ -1200,7 +1200,7 @@ namespace DataAccessLayer
                 SqlCommand cmd = that.MyConnection.CreateCommand();
                 // 4. configure the command
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "ReadUsersWithEMailStartingWith";
+                cmd.CommandText = "ReadUserWithEMail";
                 // 5. make parameters if needed (dont forget to add to the command)
                 cmd.Parameters.AddWithValue("@pattern", EMailAddress);
                 // 6. execute the command

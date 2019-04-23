@@ -1,7 +1,9 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -19,7 +21,17 @@ namespace Numberology
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
-        protected void Application_AcquireRequestState(object sender, EventArgs e)
+        //protected void Application_Error()
+        //{
+        //    var ex = Server.GetLastError();
+        //    if (ex is ThreadAbortException)
+        //        return; // Redirects may cause this exception..
+        //    Logger.Log(ex);
+            
+            
+        //}
+
+       protected void Application_AcquireRequestState(object sender, EventArgs e)
         {
 
 

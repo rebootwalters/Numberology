@@ -127,6 +127,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DropDownListController.cs" />
     <Compile Include="Controllers\HashController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NumberController.cs" />
@@ -134,10 +135,14 @@
     <Compile Include="Controllers\RelatedNumberController.cs" />
     <Compile Include="Controllers\RiddleController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Controllers\SimulateErrorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AuthorizeFilter.cs" />
+    <Compile Include="Models\DropDownViewForRelatedNumbers.cs" />
+    <Compile Include="Models\Logger.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\UserRolesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -172,7 +177,7 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Errorold.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
@@ -207,9 +212,14 @@
     <Content Include="Views\Register\Verified.cshtml" />
     <Content Include="Views\Shared\Unauthorized.cshtml" />
     <Content Include="Views\Home\Signin.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shared\LoginError.cshtml" />
+    <Content Include="Views\DropDownList\Index.cshtml" />
+    <Content Include="Views\DropDownList\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\SimulateError\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
